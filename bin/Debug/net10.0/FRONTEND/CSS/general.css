@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+    background-color: var(--background);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+:root {
+    --background: #F3F4F6;
+    --primary: #FFFFFF;
+    --text: #333;
+    --border-radius: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 17px 40px 17px 0;
+    background-color: var(--primary);
+    display: flex;
+}
+
+header > img {
+    margin-left: 5rem;
+    height: 50px;
+    width: auto;
+}
+
+.profile-button {
+    flex-shrink: 0;
+    width: 23px;
+    height: 23px;
+    border: none;
+    border-radius: 50%;
+    background: #4285f4;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.account-menu {
+    position: relative;
+    margin-left: auto;
+}
+
+.profile-button.header-profile {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 2px solid #d4e2ff;
+    border-radius: 50%;
+    background: #4285f4;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header > .header-profile {
+    margin-left: auto;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 20;
+    display: flex;
+    width: 230px;
+    flex-direction: column;
+    padding: 7px;
+    border: 1px solid #e2e5eb;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 8px 24px rgb(22 34 51 / 14%);
+}
+
+.profile-dropdown[hidden] {
+    display: none;
+}
+
+.profile-account {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    padding: 10px;
+    border-bottom: 1px solid #eceef2;
+}
+
+.profile-account strong {
+    overflow: hidden;
+    color: #292929;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-account span {
+    overflow: hidden;
+    color: #777;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-dropdown > button {
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    text-align: left;
+}
+
+.profile-dropdown > button:hover,
+.profile-dropdown > button:focus-visible {
+    outline: none;
+    background: #edf2ff;
+    color: #2877ed;
+}
+
+.profile-dropdown > button:last-child {
+    border-top: 1px solid #eceef2;
+    border-radius: 0;
+    color: #b42318;
+}
+
+/* NAV-HEADER */
+.navbar {
+    padding: 0 20px;
+
+    a {
+        color : var(--text);
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    li {
+        margin-right: 3rem;
+    }
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 8px 0;
+    color: var(--text);
+}
+
+.navbar a[aria-current="page"] {
+    color: #2877ed;
+    font-weight: 600;
+}
+
+.page-content {
+    width: min(1100px, calc(100% - 48px));
+    margin: 32px auto;
+}
+
+.page-content h1 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.75rem;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    header > img {
+        margin-left: 0;
+        height: 40px;
+    }
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .navbar li {
+        margin-right: 1rem;
+    }
+
+    .page-content {
+        width: calc(100% - 32px);
+    }
+}

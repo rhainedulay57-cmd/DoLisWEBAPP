@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eJ+eYdbqYk0=",
+  "success": true,
+  "projectFilePath": "C:\\xampp\\htdocs\\OOP_PROJECT\\OOP_PROJECT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\mysqlconnector\\2.4.0\\mysqlconnector.2.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/general.css?v=3">
+    <link rel="stylesheet" href="../CSS/dashboard.css?v=calendar-items-scroll-1">
+
+    <title>DoLis - Dashboard</title>
+</head>
+<body>
+
+<header>
+    <img src="../IMAGES/DoLis_LOGO.png" alt="DoLis Logo">
+
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="dashboard.html" aria-current="page">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="notes.html">Notes</a>
+            </li>
+
+            <li>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="calendar-header-controls">
+        <button type="button" id="todayButton">Today</button>
+        <div class="calendar-views" role="group" aria-label="Calendar view">
+            <button type="button" data-calendar-view="day"
+                aria-pressed="false">Day</button>
+            <button type="button" data-calendar-view="week"
+                aria-pressed="false">Week</button>
+            <button type="button" data-calendar-view="month"
+                aria-pressed="true" class="active">Month</button>
+            <button type="button" data-calendar-view="year"
+                aria-pressed="false">Year</button>
+        </div>
+    </div>
+
+    <div class="account-menu">
+        <button class="profile-button header-profile" id="profileButton"
+            type="button" title="Profile" aria-label="Open profile menu"
+            aria-expanded="false" aria-controls="profileDropdown">
+            <span id="profileInitial">V</span>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown" hidden>
+            <div class="profile-account">
+                <strong id="profileName">Your account</strong>
+                <span id="profileEmail"></span>
+            </div>
+            <button type="button" id="switchAccountButton">
+                Switch account
+            </button>
+            <button type="button" id="addAccountButton">
+                Add another account
+            </button>
+            <button type="button" id="logoutButton">
+                Log out
+            </button>
+        </div>
+    </div>
+
+</header>
+
+    <!-- DASHBOARD CONTENT -->
+    <div class="container-dashboard">
+
+        <main class="main-content">
+ 
+<div class="dashboard-topbar">
+    <div class="month-navigation">
+
+        <!-- BACKWARD -->
+        <button type="button" id="prevMonth"
+                title="Previous month">
+            &#10094;
+        </button>
+
+        <!-- MONTH AND YEAR -->
+        <h1 class="calendar-month" id="currentMonth">
+            October 2026
+        </h1>
+
+        <!-- FORWARD -->
+        <button type="button" id="nextMonth"
+                title="Next month">
+            &#10095;
+        </button>
+
+    </div>
+    
+    <button type="button" id="addCalendarItem" class="add-calendar-item">+</button>
+            </div>
+
+            <p id="calendarStatus" class="calendar-status" role="status" aria-live="polite"></p>
+            <p class="calendar-holiday-legend">
+                <span aria-hidden="true"></span>
+                Philippine public holiday
+            </p>
+
+            <dialog id="calendarItemDialog" class="calendar-item-dialog">
+                <form id="calendarItemForm">
+                    <h2>Add to calendar</h2>
+
+                    <label for="calendarItemType">Type</label>
+                    <select id="calendarItemType" name="type" required>
+                        <option value="task">Task</option>
+                        <option value="event">Event</option>
+                        <option value="appointment">Appointment</option>
+                    </select>
+
+                    <label for="calendarItemTitle">Title</label>
+                    <input id="calendarItemTitle" name="title" type="text"
+                        maxlength="120" required>
+
+                    <label for="calendarItemDate">Date</label>
+                    <input id="calendarItemDate" name="date" type="date" required>
+
+                    <div id="appointmentTimeField" class="appointment-time-field" hidden>
+                        <label for="calendarItemTime">Time (optional)</label>
+                        <input id="calendarItemTime" name="time" type="time">
+                    </div>
+
+                    <div class="calendar-dialog-actions">
+                        <button type="button" id="cancelCalendarItem">Cancel</button>
+                        <button type="submit">Add to calendar</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <!-- CALENDAR -->
+                        <section class="calendar-section">
+                <div class="calendar-weekdays">
+                    <span>S</span>
+                    <span>M</span>
+                    <span>T</span>
+                    <span>W</span>
+                    <span>T</span>
+                    <span>F</span>
+                    <span>S</span>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+
+                    <div class="calendar-day muted"><span>31</span></div>
+
+                    <div class="calendar-day"><span>1</span>
+                    </div>
+
+                    <div class="calendar-day"><span>2</span>
+                    </div>
+
+                    <div class="calendar-day"><span>3</span>
+                    </div>
+
+                    <div class="calendar-day"><span>4</span>
+                    </div>
+
+                    <div class="calendar-day"><span>5</span>
+                    </div>
+
+                    <div class="calendar-day"><span>6</span>
+                    </div>
+
+                    <div class="calendar-day"><span>7</span>
+                    </div>
+
+                    <div class="calendar-day"><span>8</span>
+                    </div>
+
+                    <div class="calendar-day"><span>9</span>
+                    </div>
+
+                    <div class="calendar-day"><span>10</span>
+                    </div>
+
+                    <div class="calendar-day"><span>11</span>
+                    </div>
+
+                    <div class="calendar-day"><span>12</span>
+                    </div>
+
+                    <div class="calendar-day"><span>13</span>
+                    </div>
+
+                    <div class="calendar-day"><span>14</span></div>
+                    <div class="calendar-day"><span>15</span></div>
+                    <div class="calendar-day"><span>16</span></div>
+                    <div class="calendar-day"><span>17</span></div>
+                    <div class="calendar-day"><span>18</span></div>
+                    <div class="calendar-day"><span>19</span></div>
+                    <div class="calendar-day"><span>20</span></div>
+
+                    <div class="calendar-day"><span>21</span></div>
+                    <div class="calendar-day"><span>22</span></div>
+                    <div class="calendar-day"><span>23</span></div>
+                    <div class="calendar-day"><span>24</span></div>
+                    <div class="calendar-day"><span>25</span></div>
+                    <div class="calendar-day"><span>26</span></div>
+                    <div class="calendar-day"><span>27</span></div>
+
+                    <div class="calendar-day"><span>28</span></div>
+                    <div class="calendar-day"><span>29</span></div>
+                    <div class="calendar-day"><span>30</span></div>
+                    <div class="calendar-day muted"><span>1</span></div>
+                    <div class="calendar-day muted"><span>2</span></div>
+                    <div class="calendar-day muted"><span>3</span></div>
+                    <div class="calendar-day muted"><span>4</span></div>
+
+                </div>
+            </section>
+
+            <!-- NOTES AND REMINDERS -->
+            <div class="bottom-panels">
+
+                <section class="panel notes-panel">
+                    <div class="panel-heading">
+                        <h2>NOTES</h2>
+                        <button class="icon-button" type="button"
+                            title="Add note" id="addNote">＋</button>
+                    </div>
+
+                    <div id="notesList">
+                    </div>
+                </section>
+
+                <section class="panel reminders-panel">
+                    <div class="panel-heading">
+                        <h2>REMINDERS</h2>
+                        <button class="icon-button" type="button"
+                            title="Add reminder" id="addReminder">＋</button>
+                    </div>
+
+                    <div id="remindersList">
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-side">
+
+            <!-- PRIORITIZED TASKS -->
+            <section class="side-panel">
+                <div class="side-panel-heading">
+                    <h2>PRIORITISED TASKS</h2>
+                    <button class="icon-button" id="addTask" type="button"
+                        title="Add task">＋</button>
+                </div>
+
+                <p class="side-description">Today's tasks</p>
+
+                <div class="task-list" id="taskList">
+                </div>
+            </section>
+
+            <!-- EVENTS -->
+            <section class="side-panel events-panel">
+                <div class="side-panel-heading">
+                    <h2>EVENTS</h2>
+                    <button class="icon-button" type="button"
+                        title="Add event" id="addEvent">＋</button>
+                </div>
+
+                <div class="event-list" id="eventList">
+                </div>
+            </section>
+
+        </aside>
+    </div>
+
+    <script src="../JS/dashboard.js?v=calendar-views-2"></script>
+</body>
+</html>

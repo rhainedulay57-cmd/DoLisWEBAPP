@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoLis - Create Account</title>
+
+    <link rel="stylesheet" href="../CSS/general.css?v=2">
+    <link rel="stylesheet" href="../CSS/register.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Create an account</h2>
+        <p class="subtitle">
+            Create your account to get started with DoLis.
+        </p>
+
+        <form id="registerForm">
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname"
+                   placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   placeholder="name@example.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter your password"
+                   minlength="8" maxlength="128" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword"
+                   placeholder="Confirm your password"
+                   minlength="8" maxlength="128" required>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <button type="submit" id="registerButton">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="create-account">
+            Already have an account?
+            <a href="login.html">Sign in</a>
+        </p>
+
+    </div>
+
+    <script src="../JS/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/general.css?v=3">
+    <link rel="stylesheet" href="../CSS/notes.css">
+    <title>DoLis - Notes</title>
+</head>
+<body>
+<header>
+    <img src="../IMAGES/DoLis_LOGO.png" alt="DoLis Logo">
+
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="notes.html" aria-current="page" >Notes</a>
+            </li>
+
+            <li>
+                <a href="settings.html">Settings</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="account-menu">
+        <button class="profile-button header-profile" id="profileButton"
+            type="button" title="Profile" aria-label="Open profile menu"
+            aria-expanded="false" aria-controls="profileDropdown">
+            <span id="profileInitial">V</span>
+        </button>
+        <div class="profile-dropdown" id="profileDropdown" hidden>
+            <div class="profile-account">
+                <strong id="profileName">Your account</strong>
+                <span id="profileEmail"></span>
+            </div>
+            <button type="button" id="switchAccountButton">
+                Switch account
+            </button>
+            <button type="button" id="addAccountButton">
+                Add another account
+            </button>
+            <button type="button" id="logoutButton">
+                Log out
+            </button>
+        </div>
+    </div>
+
+</header>
+
+<main class="page-content">
+    <h1>Notes</h1>
+</main>
+
+<script src="../JS/general-header.js?v=1"></script>
+</body>
+</html>
